@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
+    integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/style/main.css">
+  <link rel="stylesheet" href="assets/style/style.css">
+  <title>inspire</title>
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex justify-content-between text-light">
+            <div class="image">
+              <h5>Image By: <span id="image"></span></h5>
+            </div>
+            <div class="weather d-flex align-items-center justify-content-center text-center flex-column mt-3"
+              id="weather">
+              <h3>26 c</h3>
+              <h4>sunny</h4>
+              <p class="p-0">☀️</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 text-center text-light">
+          <div id="clock">
+            <h1>9:03am</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-light">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae iusto saepe pariatur consequuntur. Sunt in
+            excepturi maxime beatae perspiciatis autem.</p>
+          <h5>By: this duuude</h5>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="to-do p-3 text-light">
+            <div class="d-flex justify-content-between">
+              <h4>TODO</h4>
+              <h4>4</h4>
+            </div>
+            <div>
+              <div>
+                <ul id="tasks">
+                  <li class="d-flex justify-content-between list-group-item rounded elevation-2 mb-2 px-2 p-1">
+                    <div>
+                      <input onchang="app.todosController.toggleCompleted('${this.id}')" type="checkbox"
+                        ${this.completed ? 'checked' : '' }>
+                      <span class="ms-5">do this here</span>
+                    </div>
+                    <span><i onclic="app.todosController.removeTask()" class="mdi mdi-close text-danger selecatable">
+                      </i></span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <form onsubmit="app.todosController.addTask()">
+                  <div class="d-flex">
+                    <input type="text" class="form-control square-right border border-dark bg-white" name="name"
+                      required>
+                    <label for="name"></label>
+                    <button class="btn btn-dark square-left border border-dark" title="Add Item"><b>+</b></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
+    integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="app/App.js" type="module"></script>
+</body>
+
+</html>
