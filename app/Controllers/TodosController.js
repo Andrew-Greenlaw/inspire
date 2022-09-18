@@ -11,7 +11,6 @@ export class TodosController {
     } catch (error) {
       console.log('[getTodo]', error)
       Pop.error(error)
-
     }
   }
 }

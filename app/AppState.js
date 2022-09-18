@@ -6,8 +6,16 @@ import { loadState } from "./Utils/Store.js"
 class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
   values = loadState('values', Value)
-  sandboxImage = {}
+  /** @type {import('./Models/Image').Image | null} */
+  sandboxImage = null
+  /** @type {import('./Models/Quote').Quote | null} */
+  quote = null
+  /** @type {import('./Models/Weather').Weather | null} */
+  weather = null
+  /** @type {import('./Models/Todo').Todo[]} */
   todos = []
+
+  activeTemp = 0
 
 }
 
