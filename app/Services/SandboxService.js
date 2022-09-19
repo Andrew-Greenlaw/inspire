@@ -15,7 +15,7 @@ class SandboxService {
   }
   async getWeather() {
     const res = await sandboxServer.get('/api/weather')
-    console.log(res.data)
+    // console.log(res.data)
     let isF = appState.isF
     if (isF === false) {
       res.data.type = '°F'
