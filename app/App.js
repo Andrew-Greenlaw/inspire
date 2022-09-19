@@ -3,7 +3,6 @@ import { TodosController } from "./Controllers/TodosController.js"
 
 
 class App {
-
   sanboxController = new SandboxController()
   todosController = new TodosController()
 

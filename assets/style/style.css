@@ -11,7 +11,8 @@ body {
   color: aliceblue;
   text-shadow: 1px 1px black, 0px 0px 5px rgb(17, 17, 17);
   font-weight: bold;
-  letter-spacing: 0.03rem;
+  letter-spacing: 0.1rem;
+
 }
 
 .weather {
@@ -27,8 +28,6 @@ body {
   text-shadow: 1px 1px black, 0px 0px 5px rgb(22, 22, 22);
 }
 
-
-
 .to-do {
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.537);
@@ -36,6 +35,12 @@ body {
   min-height: 30vh;
   margin-bottom: 1rem;
   backdrop-filter: blur(3px);
+}
+
+.task {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: rgb(255, 252, 247);
 }
 
 .reverse-row {
@@ -54,6 +59,10 @@ h1 {
   text-shadow: 1px 1px black, 0px 0px 5px rgb(22, 22, 22);
   font-weight: bold;
   letter-spacing: 0.08rem;
+}
+
+.line {
+  text-decoration-line: line-through;
 }
 
 .p-0 {

@@ -14,8 +14,8 @@ class AppState extends EventEmitter {
   weather = null
   /** @type {import('./Models/Todo').Todo[]} */
   todos = []
-
-  activeTemp = 0
+  isF = false
+  uncompleted = 0
 
 }
 

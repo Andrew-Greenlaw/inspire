@@ -5,21 +5,23 @@ import { setHTML, setText } from "../Utils/Writer.js"
 
 function _drawPicture() {
   let image = appState.sandboxImage
-  let quote = appState.quote
-  let weather = appState.weather
   // @ts-ignore
   document.querySelector('body').style.backgroundImage = `url(${image.largeImgUrl})`
   // @ts-ignore
   setText('image', image.author)
   // @ts-ignore
-  setHTML('quotes', quote.QuoteTemplate)
-  // @ts-ignore
-  setHTML('weather', weather.WeatherTemplate)
+  setHTML('quotes', appState.quote.QuoteTemplate)
 }
 function _displayClock() {
   let display = new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })
   setText('clock', display)
   setTimeout(_displayClock, 1000)
+}
+function _drawWeather() {
+  let weather = appState.weather
+  sandboxService.tempatureConverter()
+  // @ts-ignore
+  setHTML('weather', weather.WeatherTemplate)
 }
 
 export class SandboxController {
@@ -27,9 +29,10 @@ export class SandboxController {
     this.getSandboxImage()
     this.getQuote()
     this.getWeather()
-    // this.getSandboxServer()
     appState.on('sandboxImage', _drawPicture)
+    appState.on('weather', _drawWeather)
     _displayClock()
+    // this.getSandboxServer()
   }
 
   async getSandboxImage() {
@@ -56,8 +59,13 @@ export class SandboxController {
       Pop.error(error)
     }
   }
-  toggleTemp(valNum) {
-    sandboxService.toggleTemp(valNum)
+  async toggleTemp() {
+    try {
+      await sandboxService.getWeather()
+    } catch (error) {
+      console.error('[getWeather]', error)
+      Pop.error(error)
+    }
   }
   // async getSandboxServer() {
   //   try {
